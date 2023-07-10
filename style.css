@@ -60,6 +60,10 @@ h3 {
     color: var(--bg-color);
 }
 
+button {
+    cursor: pointer;
+}
+
 footer {
     position: absolute;
     bottom: 0;
