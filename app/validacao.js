@@ -1,24 +1,26 @@
 function verificaSeChuteValorValido(chute) {
     const numero = +chute;
 
-    if(chuteInvalido(numero)) {
-        elementoChute.innerHTML +='<div>Valor inválido.</div>';
+    if (chuteInvalido(numero)) {
+        elementoChute.innerHTML += '<div>Valor inválido.</div>';
         return;
     }
 
     if (numeroMaiorOuMenorQuePermitido(numero)) {
-        elementoChute.innerHTML +=`<div>Valor inválido. Fale um número entre ${menorValor} e ${maiorValor}.</div>`;
+        elementoChute.innerHTML += `<div>Valor inválido. Fale um número entre ${menorValor} e ${maiorValor}.</div>`;
         return;
     }
 
-    if(numero === numeroSecreto) {
+    if (numero === numeroSecreto) {
         document.body.innerHTML = `
             <h2>Parabéns, você acertou!</h2>
             <h3>O número secreto é ${numeroSecreto}.</h3>
 
             <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+
+            <footer><p>Desenvolvido por <a href="https://github.com/vanessalaureano" target="_blank"><em>Vanessa Laureano</em></a></p></footer>
         `
-    } else if(numero > numeroSecreto) {
+    } else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
         <div>O número secreto é menor <i class="fa-solid fa-arrow-down-long"></i></div>
         `
@@ -38,7 +40,7 @@ function numeroMaiorOuMenorQuePermitido(numero) {
 }
 
 document.body.addEventListener('click', e => {
-    if(e.target.id == 'jogar-novamente') {
+    if (e.target.id == 'jogar-novamente') {
         window.location.reload() // recarrega a página e reinicia o jogo
     }
 })
