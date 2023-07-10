@@ -39,6 +39,6 @@ function numeroMaiorOuMenorQuePermitido(numero) {
 
 document.body.addEventListener('click', e => {
     if(e.target.id == 'jogar-novamente') {
-        window.location.reload()
+        window.location.reload() // recarrega a página e reinicia o jogo
     }
 })
